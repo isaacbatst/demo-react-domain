@@ -1,5 +1,5 @@
 import {type Attributes} from 't20-sheet-builder';
-import {type AttributeModifier} from '../../../AttributeModifier';
+import {type AttributeModifier} from '../AttributeModifier';
 import {type AttributesPointsInterface} from './AttributePoints';
 
 export class AttributesPointsDecorator implements AttributesPointsInterface {
