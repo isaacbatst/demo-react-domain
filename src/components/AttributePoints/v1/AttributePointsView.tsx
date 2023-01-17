@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import {type Attribute} from 't20-sheet-builder';
 import {AttributeModifier} from '../../../AttributeModifier';
-import AttributeInput from '../../AttributeInput.tsx/AttributeInput';
+import AttributeInput from '../../AttributeInput/AttributeInput';
 
 const prices: Record<AttributeModifier, number> = {
 	[AttributeModifier.minusOne]: -1,

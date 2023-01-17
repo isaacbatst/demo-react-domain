@@ -1,6 +1,6 @@
 import React from 'react';
 import {type Attribute} from 't20-sheet-builder';
-import AttributeInput from '../../AttributeInput.tsx/AttributeInput';
+import AttributeInput from '../../AttributeInput/AttributeInput';
 import {useAttributePointsProjection} from './useAttributePointsProjection';
 
 const AttributePointsView: React.FC = () => {
