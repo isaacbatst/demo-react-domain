@@ -1,5 +1,5 @@
 import {type Attribute} from 't20-sheet-builder';
-import {AttributeModifier} from '../../../AttributeModifier';
+import {AttributeModifier} from '../AttributeModifier';
 
 export type AttributesPointsInterface = {
 	decrement(attribute: Attribute): void;

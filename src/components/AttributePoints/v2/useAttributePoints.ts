@@ -1,6 +1,6 @@
 import {useState, useCallback} from 'react';
 import {type Attribute} from 't20-sheet-builder';
-import {AttributeModifier} from '../../../AttributeModifier';
+import {AttributeModifier} from '../AttributeModifier';
 
 const prices: Record<AttributeModifier, number> = {
 	[AttributeModifier.minusOne]: -1,
