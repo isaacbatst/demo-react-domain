@@ -35,14 +35,6 @@ export class AttributesPoints implements AttributesPointsInterface {
 		charisma: 0,
 	};
 
-	getAttributes() {
-		return this.attributes;
-	}
-
-	getPoints() {
-		return this.points;
-	}
-
 	increment(attribute: Attribute) {
 		const attributeValue = this.attributes[attribute];
 		if (this.points === 0) {
@@ -75,5 +67,13 @@ export class AttributesPoints implements AttributesPointsInterface {
 		const calculatedPoints = this.points + decrementRefund;
 		this.points = calculatedPoints;
 		this.attributes[attribute] = decrementedAttribute;
+	}
+
+	getAttributes() {
+		return this.attributes;
+	}
+
+	getPoints() {
+		return this.points;
 	}
 }
