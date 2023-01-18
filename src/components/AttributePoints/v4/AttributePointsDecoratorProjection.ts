@@ -19,11 +19,15 @@ export class AttributesPointsDecoratorProjection extends AttributesPointsDecorat
 
 	decrement(attribute: keyof Attributes): void {
 		super.decrement(attribute);
-		this.setProjection(AttributesPointsDecoratorProjection.getProjection(this.attributePoints));
+		this.setProjection(this.getProjection());
 	}
 
 	increment(attribute: keyof Attributes): void {
 		super.increment(attribute);
-		this.setProjection(AttributesPointsDecoratorProjection.getProjection(this.attributePoints));
+		this.setProjection(this.getProjection());
+	}
+
+	private getProjection() {
+		return AttributesPointsDecoratorProjection.getProjection(this.attributePoints);
 	}
 }
