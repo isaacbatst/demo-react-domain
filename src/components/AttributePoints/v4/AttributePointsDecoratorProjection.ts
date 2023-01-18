@@ -3,6 +3,13 @@ import {type AttributePointsDto, type AttributesPointsInterface} from './Attribu
 import {AttributesPointsDecorator} from './AttributePointsDecorator';
 
 export class AttributesPointsDecoratorProjection extends AttributesPointsDecorator {
+	static getProjection(attributePoints: AttributesPointsInterface): AttributePointsDto {
+		return {
+			attributes: attributePoints.getAttributes(),
+			points: attributePoints.getPoints(),
+		};
+	}
+
 	constructor(
 		attributePoints: AttributesPointsInterface,
 		private readonly setProjection: (projection: AttributePointsDto) => void,
@@ -12,18 +19,11 @@ export class AttributesPointsDecoratorProjection extends AttributesPointsDecorat
 
 	decrement(attribute: keyof Attributes): void {
 		super.decrement(attribute);
-		this.setProjection(this.getProjection());
+		this.setProjection(AttributesPointsDecoratorProjection.getProjection(this.attributePoints));
 	}
 
 	increment(attribute: keyof Attributes): void {
 		super.increment(attribute);
-		this.setProjection(this.getProjection());
-	}
-
-	private getProjection(): AttributePointsDto {
-		return {
-			attributes: super.getAttributes(),
-			points: super.getPoints(),
-		};
+		this.setProjection(AttributesPointsDecoratorProjection.getProjection(this.attributePoints));
 	}
 }

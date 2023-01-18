@@ -12,12 +12,7 @@ type AttributePointsDto = {
 
 export const useAttributePointsProjection = () => {
 	const attributePointsRef = useAttributePoints();
-	const [projection, setProjection] = useState(projectAttributePoints(attributePointsRef));
+	const [projection, setProjection] = useState(AttributesPointsDecoratorProjection.getProjection(attributePointsRef));
 
 	return new AttributesPointsDecoratorProjection(attributePointsRef, setProjection);
 };
-
-const projectAttributePoints = (attributePoints: AttributesPoints): AttributePointsDto => ({
-	attributes: attributePoints.getAttributes(),
-	points: attributePoints.getPoints(),
-});
